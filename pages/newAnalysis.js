@@ -287,17 +287,17 @@ export default function NewAnalysis() {
 
     const RenderVariableModal = () => {
         return (
-            <div class="fixed z-10 inset-0   overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="defaultModal">
-                <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div className="fixed z-10 inset-0   overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="defaultModal">
+                <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
-
-                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
 
-                    <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+
+                    <div className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                        <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                             <div className="flex justify-between">
                                 <h1>Değişken Ekle</h1>
                                 <button onClick={() => setShowVariableModal(false)}>
@@ -307,8 +307,8 @@ export default function NewAnalysis() {
                                         <g id="skin" />
                                         <g id="skin-shadow" />
                                         <g id="line">
-                                            <line x1="17.5" x2="54.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-                                            <line x1="54.5" x2="17.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+                                            <line x1="17.5" x2="54.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="2" />
+                                            <line x1="54.5" x2="17.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="2" />
                                         </g>
                                     </svg>
 
@@ -317,18 +317,18 @@ export default function NewAnalysis() {
 
 
                             </div>
-                            <div class="flex flex-wrap space-x-2  justify-around">
+                            <div className="flex flex-wrap space-x-2  justify-around">
 
                                 <form>
-                                    <div class="mb-4">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2" >
+                                    <div className="mb-4">
+                                        <label className="block text-gray-700 text-sm font-bold mb-2" >
                                             Değişken Adı
                                         </label>
-                                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="var_name" type="text" placeholder="Değişken Adı" />
+                                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="var_name" type="text" placeholder="Değişken Adı" />
                                     </div>
 
                                     <div className="mb-4 flex  justify-center">
-                                        <div class="mb-3 xl:w-96">
+                                        <div className="mb-3 xl:w-96">
                                             <select
                                                 onChange={(e) => {
                                                     if (e.target.value === "2") {
@@ -338,7 +338,7 @@ export default function NewAnalysis() {
                                                         setIsCategoric(false)
                                                     }
                                                 }}
-                                                class="form-select appearance-none
+                                                className="form-select appearance-none
                                                 block
                                                 w-full
                                                 px-3
@@ -359,18 +359,18 @@ export default function NewAnalysis() {
                                         </div>
 
                                     </div>
-                                    {isCategoric ? (<div class="mb-6">
+                                    {isCategoric ? (<div className="mb-6">
 
-                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlhtmlFor="password">
                                             Kategoriler
                                         </label>
-                                        <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="categories-text" type="text" placeholder="Kategori1-Kategori2" />
-                                        <p class="text-xs ">Kategorileri '-' ile Ayırarak Yazınız örn:(Kategori1-Kategori2)</p>
+                                        <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="categories-text" type="text" placeholder="Kategori1-Kategori2" />
+                                        <p className="text-xs ">Kategorileri &#39;-&#39; ile Ayırarak Yazınız örn:(Kategori1-Kategori2)</p>
                                     </div>) : <></>}
 
 
-                                    <div class="flex items-center justify-between">
-                                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={(e) => addVariable(e)}>
+                                    <div className="flex items-center justify-between">
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={(e) => addVariable(e)}>
                                             Ekle
                                         </button>
 
@@ -391,17 +391,17 @@ export default function NewAnalysis() {
 
     const RenderCategoryModal = () => {
         return (
-            <div class="fixed z-10 inset-0   overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="defaultModal">
-                <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div className="fixed z-10 inset-0   overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="defaultModal">
+                <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
-
-                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
 
-                    <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+
+                    <div className="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                        <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                             <div className="flex justify-between">
                                 <h1>Değişken Ekle</h1>
                                 <button onClick={() => setShowCategoryModal(false)}>
@@ -411,8 +411,8 @@ export default function NewAnalysis() {
                                         <g id="skin" />
                                         <g id="skin-shadow" />
                                         <g id="line">
-                                            <line x1="17.5" x2="54.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
-                                            <line x1="54.5" x2="17.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+                                            <line x1="17.5" x2="54.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="2" />
+                                            <line x1="54.5" x2="17.5" y1="17.5" y2="54.5" fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="2" />
                                         </g>
                                     </svg>
 
@@ -421,10 +421,10 @@ export default function NewAnalysis() {
 
 
                             </div>
-                            <div class="flex flex-wrap space-x-2  justify-around">
+                            <div className="flex flex-wrap space-x-2  justify-around">
 
                                 <form>
-                                    <div class="relative w-full flex justify-center h-48 mb-4">
+                                    <div className="relative w-full flex justify-center h-48 mb-4">
 
                                         <div className="w-full flex justify-center">
                                             <div className="border-2 z-10 absolute top-0 left-0 right-0 rounded-full w-40 h-40 mx-auto">
@@ -440,15 +440,15 @@ export default function NewAnalysis() {
 
 
                                     </div>
-                                    <div class="mb-6">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                                    <div className="mb-6">
+                                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
                                             Kategori Adı
                                         </label>
-                                        <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="category-name" type="text" placeholder="Kategori Adı" />
+                                        <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="category-name" type="text" placeholder="Kategori Adı" />
 
                                     </div>
-                                    <div class="flex items-center justify-between">
-                                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={addCategoryImageMap}>
+                                    <div className="flex items-center justify-between">
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={addCategoryImageMap}>
                                             Ekle
                                         </button>
 
@@ -471,23 +471,23 @@ export default function NewAnalysis() {
 
     return (
         <>
-            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-800">
-                <div class="container flex flex-wrap justify-between items-center mx-auto">
-                     <img src='/monitoring.png' class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Panel</span>
-                    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-                        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-800">
+                <div className="container flex flex-wrap justify-between items-center mx-auto">
+                     <img src='/monitoring.png' className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Panel</span>
+                    <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
+                        <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                            {/*} <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Kullanıcı Ekle</a>
+                                <a href="#" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Kullanıcı Ekle</a>
                             </li>*/}
                               <li>
-                                <a href="panel" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Analizler</a>
+                                <a href="panel" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Analizler</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Yeni Analiz</a>
+                                <a href="#" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Yeni Analiz</a>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={logout}>Çıkış</a>
+                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={logout}>Çıkış</a>
                             </li>
 
                         </ul>
@@ -496,10 +496,10 @@ export default function NewAnalysis() {
             </nav>
             <div className="container mx-auto ">
                 <div className="flex justify-start mb-10 mt-10">
-                    <div class="flex justify-center">
-                        <div class="mb-3 w-96">
-                            <label for="formFile" class="form-label inline-block mb-2 font-bold text-2xl">Veri Seti</label>
-                            <input class="form-control
+                    <div className="flex justify-center">
+                        <div className="mb-3 w-96">
+                            <label htmlFor="formFile" className="form-label inline-block mb-2 font-bold text-2xl">Veri Seti</label>
+                            <input className="form-control
                             block
                             w-full
                             px-3
@@ -524,17 +524,17 @@ export default function NewAnalysis() {
                         <h1 className="font-bold text-2xl">Değişkenler</h1>
                     </div>
                     <div>
-                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => setShowVariableModal(true)}>
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => setShowVariableModal(true)}>
                             Ekle
                         </button>
                     </div>
 
                 </div>
-                <div class="overflow-x-auto flex  flex-grow flex-row h-80 mt-5">
+                <div className="overflow-x-auto flex  flex-grow flex-row h-80 mt-5">
 
 
                     {variables && variables.map((value, index) => (
-                        <div class="h-60 w-48 rounded  shadow-lg border-2 mr-5">
+                        <div className="h-60 w-48 rounded  shadow-lg border-2 mr-5" key={index}>
                             <div className="flex justify-end">
                                 <button var-id={value.var_id} onClick={(e) => removeVariable(e)}>
                                     <img src="/cancel.png" className="w-3 h-3 mr-2 mt-2" />
@@ -543,21 +543,21 @@ export default function NewAnalysis() {
 
                             </div>
 
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">{value.name}</div>
-                                <div class="relative flex py-5 items-center">
-                                    <div class="flex-grow border-t border-gray-400"></div>
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2">{value.name}</div>
+                                <div className="relative flex py-5 items-center">
+                                    <div className="flex-grow border-t border-gray-400"></div>
 
                                 </div>
-                                <p class="text-gray-700 text-base">
+                                <p className="text-gray-700 text-base">
                                     {value.type}
                                 </p>
                             </div>
                             <div className="flex flex-row justify-around mt-4">
-                                <button class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" var-index={index} onClick={(e) => addDependentVariable(e)}>
+                                <button className="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" var-index={index} onClick={(e) => addDependentVariable(e)}>
                                     Bağımlı
                                 </button>
-                                <button class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" var-index={index} onClick={(e) => addIndependentVariable(e)}>
+                                <button className="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" var-index={index} onClick={(e) => addIndependentVariable(e)}>
                                     Bağımsız
                                 </button>
 
@@ -574,8 +574,8 @@ export default function NewAnalysis() {
 
 
                 </div>
-                <div class="relative flex py-5 items-center">
-                    <div class="flex-grow border-t border-gray-400"></div>
+                <div className="relative flex py-5 items-center">
+                    <div className="flex-grow border-t border-gray-400"></div>
 
                 </div>
                 {showVariableModal ? <RenderVariableModal /> : null}
@@ -593,9 +593,9 @@ export default function NewAnalysis() {
 
 
                         </div>
-                        <div class="overflow-x-auto flex  flex-grow flex-row h-64 mt-5 justify-center">
+                        <div className="overflow-x-auto flex  flex-grow flex-row h-64 mt-5 justify-center">
                             {dependentVariables && dependentVariables.map((value, index) => (
-                                <div class="h-40 w-48 rounded  shadow-lg border-2 mr-5">
+                                <div className="h-40 w-48 rounded  shadow-lg border-2 mr-5" key={index}>
                                     <div className="flex justify-end">
                                         <button onClick={(e) => removeDependentVariable(e)} var-id={value.var_id}>
                                             <img src="/cancel.png" className="w-3 h-3 mr-2 mt-2" />
@@ -604,13 +604,13 @@ export default function NewAnalysis() {
 
                                     </div>
 
-                                    <div class="px-6 py-4">
-                                        <div class="font-bold text-xl mb-2">{value.name}</div>
-                                        <div class="relative flex py-5 items-center">
-                                            <div class="flex-grow border-t border-gray-400"></div>
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl mb-2">{value.name}</div>
+                                        <div className="relative flex py-5 items-center">
+                                            <div className="flex-grow border-t border-gray-400"></div>
 
                                         </div>
-                                        <p class="text-gray-700 text-base">
+                                        <p className="text-gray-700 text-base">
                                             {value.type}
                                         </p>
                                     </div>
@@ -639,9 +639,9 @@ export default function NewAnalysis() {
 
 
                         </div>
-                        <div class="overflow-x-auto flex  justify-center flex-grow flex-row h-64 mt-5 border-l-2">
+                        <div className="overflow-x-auto flex  justify-center flex-grow flex-row h-64 mt-5 border-l-2">
                             {independentVariables && independentVariables.map((value, index) => (
-                                <div class="h-40 w-48 rounded  shadow-lg border-2 mr-5">
+                                <div className="h-40 w-48 rounded  shadow-lg border-2 mr-5" key={index}>
                                     <div className="flex justify-end">
                                         <button onClick={(e) => removeIndependentVariable(e)} var-id={value.var_id}>
                                             <img src="/cancel.png" className="w-3 h-3 mr-2 mt-2" />
@@ -650,13 +650,13 @@ export default function NewAnalysis() {
 
                                     </div>
 
-                                    <div class="px-6 py-4">
-                                        <div class="font-bold text-xl mb-2">{value.name}</div>
-                                        <div class="relative flex py-5 items-center">
-                                            <div class="flex-grow border-t border-gray-400"></div>
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl mb-2">{value.name}</div>
+                                        <div className="relative flex py-5 items-center">
+                                            <div className="flex-grow border-t border-gray-400"></div>
 
                                         </div>
-                                        <p class="text-gray-700 text-base">
+                                        <p className="text-gray-700 text-base">
                                             {value.type}
                                         </p>
                                     </div>
@@ -681,8 +681,8 @@ export default function NewAnalysis() {
 
                 </div>
 
-                <div class="relative flex py-5 items-center">
-                    <div class="flex-grow border-t border-gray-400"></div>
+                <div className="relative flex py-5 items-center">
+                    <div className="flex-grow border-t border-gray-400"></div>
 
                 </div>
 
@@ -690,16 +690,16 @@ export default function NewAnalysis() {
                     <div>
                         <h1 className="font-bold text-2xl">Tahmin Kategorileri ve Fotoğrafları</h1>
                     </div>
-                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => setShowCategoryModal(true)}>
+                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => setShowCategoryModal(true)}>
                         Ekle
                     </button>
 
 
                 </div>
-                <div class="overflow-x-auto flex  justify-start flex-grow flex-row h-80 mt-5 ">
+                <div className="overflow-x-auto flex  justify-start flex-grow flex-row h-80 mt-5 ">
 
                     {categoryImageMaps && categoryImageMaps.map((value, index) => (
-                        <div class="h-62 w-48 rounded  shadow-lg border-2 mr-5">
+                        <div className="h-62 w-48 rounded  shadow-lg border-2 mr-5" key={index}>
                             <div className="flex justify-end">
                                 <button onClick={(e) => removeCategoryImageMap(e)} map-id={value.map_id}>
                                     <img src="/cancel.png" className="w-3 h-3 mr-2 mt-2" />
@@ -708,14 +708,14 @@ export default function NewAnalysis() {
 
                             </div>
 
-                            <div class="px-6 py-4">
-                                <img class="rounded-full border border-gray-100 shadow-sm justify-self-center w-32 h-32" src={value.preview_image} alt="user image" />
+                            <div className="px-6 py-4">
+                                <img className="rounded-full border border-gray-100 shadow-sm justify-self-center w-32 h-32" src={value.preview_image} alt="user image" />
 
-                                <div class="relative flex py-5 items-center">
-                                    <div class="flex-grow border-t border-gray-400"></div>
+                                <div className="relative flex py-5 items-center">
+                                    <div className="flex-grow border-t border-gray-400"></div>
 
                                 </div>
-                                <div class="font-bold text-xl mb-2">{value.category_name}</div>
+                                <div className="font-bold text-xl mb-2">{value.category_name}</div>
 
                             </div>
 
@@ -733,13 +733,13 @@ export default function NewAnalysis() {
 
 
                 </div>
-                <div class="relative flex py-5 items-center">
-                    <div class="flex-grow border-t border-gray-400"></div>
+                <div className="relative flex py-5 items-center">
+                    <div className="flex-grow border-t border-gray-400"></div>
 
                 </div>
                 <div className="flex justify-end mb-10">
 
-                    <button class="bg-transparent w-32 h-16 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={createNewAnalysis}>
+                    <button className="bg-transparent w-32 h-16 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={createNewAnalysis}>
                         Oluştur
                     </button>
 
