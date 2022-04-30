@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import crypto from "crypto"
 import * as XLSX from 'xlsx/xlsx.mjs';
+import { ApiUrl } from "../helpers/appConstants";
 
 
 
@@ -72,7 +73,7 @@ export default function NewAnalysis() {
         try {
             const response = await axios({
                 method: "post",
-                url: "http://localhost:3002/api/analysis/new-analysis",
+                url: `${ApiUrl}/analysis/new-analysis`,
                 data: form,
                 headers: { "Content-Type": "multipart/form-data" },
             })

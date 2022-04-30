@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken"
 
 import { useEffect, useState } from "react";
 import * as XLSX from 'xlsx/xlsx.mjs';
+import { ApiStaticUrl, ApiUrl } from "../helpers/appConstants";
 
 
 
@@ -29,7 +30,7 @@ export default function Analysis() {
             console.log(decoded_token)
             
             try {
-                var response = await axios.get(`http://localhost:3002/api/analysis/get-analysis?analysis_code=${decoded_token.analysis_code}`)
+                var response = await axios.get(`${ApiUrl}/analysis/get-analysis?analysis_code=${decoded_token.analysis_code}`)
                 setAnalysisCode(decoded_token.analysis_code)
                 setAnalysis(response.data)
             }
@@ -92,7 +93,7 @@ export default function Analysis() {
     }
 
     const _sendPredictionDataCallback = async (data) => {
-        var response = await axios.post(`http://localhost:3002/api/analysis/get-multiple-prediction?analysis_code=${analysisCode}`, { data: data })
+        var response = await axios.post(`${ApiUrl}/analysis/get-multiple-prediction?analysis_code=${analysisCode}`, { data: data })
         setTotalPage(Math.ceil(response.data.predictions.length/10))
         console.log(response.data)
 
@@ -143,7 +144,7 @@ export default function Analysis() {
                     prediction_data[cat_input.getAttribute("var-name")] = cat_input.value
                 })
                 
-                var response = await axios.post(`http://localhost:3002/api/analysis/get-prediction?analysis_code=${analysisCode}`, { data: prediction_data })
+                var response = await axios.post(`${ApiUrl}/analysis/get-prediction?analysis_code=${analysisCode}`, { data: prediction_data })
 
                 setPrediction(response.data)
             }
@@ -411,7 +412,7 @@ export default function Analysis() {
 
                                                                      <div className="grid w-1/6 h-1/6 mb-5 " key={key}>                                                                                                                                                 
                                                                          <p className="justify-self-center mt-2">{cim.category}</p>
-                                                                        <img className="rounded-full border border-gray-100 shadow-sm justify-self-center w-20 h-20" src={"http://localhost:3002/uploads/" + cim.image} alt="user image" />                                                                                                                                               
+                                                                        <img className="rounded-full border border-gray-100 shadow-sm justify-self-center w-20 h-20" src={`${ApiStaticUrl}` + cim.image} alt="user image" />                                                                                                                                               
                                                                         <p className="justify-self-center mt-2">%{parseFloat(multiplePrediction.predictions[predictionIndex][cim.category] * 100).toFixed(2)}</p>
                                                                      </div>
                                                                 ))}
@@ -457,7 +458,7 @@ export default function Analysis() {
                                                     <div className="grid w-1/6 h-1/6" key={key}>
                                                         
                                                         <p className="justify-self-center mt-2">{value[0]}</p>
-                                                        <img className="rounded-full border border-gray-100 shadow-sm justify-self-center w-20 h-20" src={"http://localhost:3002" +"/uploads/"+ image} alt="user image" />
+                                                        <img className="rounded-full border border-gray-100 shadow-sm justify-self-center w-20 h-20" src={ApiStaticUrl+ image} alt="user image" />
                                                         <p className="justify-self-center mt-2">%{value[1] * 100}</p>
                                                     </div>
 

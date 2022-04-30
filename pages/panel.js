@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import myLogo from '../public/monitoring.png'
 import _ from 'lodash'
+import { ApiUrl } from "../helpers/appConstants";
 
 
 
@@ -24,7 +25,7 @@ export default function Panel() {
         if (token) {
             try {
 
-                const analysis = await axios.get("http://localhost:3002/api/analysis/all-analysis")
+                const analysis = await axios.get(`${ApiUrl}/analysis/all-analysis`)
                 setTotalPage(Math.ceil((analysis.data.data.length / itemsPerPage)))
                 setAllAnalysis(analysis.data.data)
 
@@ -42,8 +43,8 @@ export default function Panel() {
 
     const deleteAnalysis = async (id) => {
         try {
-            await axios.get(`http://localhost:3002/api/analysis/delete-analysis?id=${id}`)
-            const analysis = await axios.get("http://localhost:3002/api/analysis/all-analysis")
+            await axios.get(`${ApiUrl}/analysis/delete-analysis?id=${id}`)
+            const analysis = await axios.get(`${ApiUrl}/analysis/all-analysis`)
             setTotalPage(Math.ceil((analysis.data.data.length / itemsPerPage)))
             setAllAnalysis(analysis.data.data)
         }

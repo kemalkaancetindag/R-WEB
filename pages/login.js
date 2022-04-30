@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { ApiUrl } from "../helpers/appConstants";
 
 
 
@@ -16,7 +17,7 @@ export default function Login() {
 
   const login = async () => {
     
-    const response = await axios.get(`http://localhost:3002/api/analysis/analysis-token?analysis_code=${analysisCode}`)
+    const response = await axios.get(`${ApiUrl}/analysis/analysis-token?analysis_code=${analysisCode}`)
     console.log(response)
 
     if(response.data.success){

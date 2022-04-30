@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { ApiUrl } from "../helpers/appConstants";
 
 
 
@@ -18,7 +19,7 @@ export default function PanelLogin() {
 
   const login = async () => {
       try{
-        const response =  await axios.get(`http://localhost:3002/api/user/get-user?username=${username}&password=${password}`)
+        const response =  await axios.get(`${ApiUrl}/user/get-user?username=${username}&password=${password}`)
         if(response.data.success){
           localStorage.setItem("user_token",response.data.data)
           router.push("/panel")
