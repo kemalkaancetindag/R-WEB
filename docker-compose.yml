@@ -3,29 +3,29 @@ services:
   api_service:
     image: api_service          
     ports:
-      - "3002:3002"    
+      - 3002:3002    
     volumes:
        - ./api:/usr/src/app/api
        - /usr/src/app/api/node_modules
   web_service:  
     image: web_service
     ports:
-      - "80:3000"        
+      - 80:3000        
     volumes:
        - ./web-app:/usr/src/app/web-app
        - /usr/src/app/web-app/node_modules
   train_service:
     image: train_service
     volumes:
-     - ./data:/data         
+     - ModelSavingVolume:/data         
     ports:
      - "8000:8000"
   predict_service:
     image: predict_service
     volumes:
-     - ./data:/data         
+     - ModelSavingVolume:/data         
     ports:
-     - "8001:8001"
+     - 8001:8001
   mongodb:
     image: mongo:latest
     ports:

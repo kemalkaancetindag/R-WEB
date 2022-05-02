@@ -1,2 +1,2 @@
-export const ApiUrl = "http://api_service:3002/api"
-export const ApiStaticUrl = "http://api_service:3002/uploads/" 
+export const ApiUrl = "http://37.148.211.125:3002/api"
+export const ApiStaticUrl = "http://37.148.211.125:3002/uploads/" 
