@@ -62,7 +62,7 @@ export default function Panel() {
 
     return (
         <>
-            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  bg-gray-800">
+            <nav className="border-gray-200 px-2 sm:px-4 py-2.5  bg-gray-800">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <img src='/monitoring.png' className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
                     <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Panel</span>
@@ -116,8 +116,8 @@ export default function Panel() {
                             <tbody>
                                 {allAnalysis.slice((currentPage * itemsPerPage), ((currentPage * itemsPerPage) + itemsPerPage)).map((value, index) => (
 
-                                    <tr key={index} className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600">
-                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 text-white whitespace-nowrap">
+                                    <tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600">
+                                        <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap">
                                             {value.analysis_code}
                                         </th>
                                         <td className="px-6 py-4">

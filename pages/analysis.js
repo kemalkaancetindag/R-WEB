@@ -179,7 +179,7 @@ export default function Analysis() {
                                         <ul className="space-y-2" key={index}>
 
                                             <li>
-                                                <button type="button" className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 text-white hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle={index} onClick={(e) => toggleDropdown(e)}>
+                                                <button type="button" className="flex items-center p-2 w-full  font-normal text-white rounded-lg transition duration-75 group hover:bg-gray-100 text-white hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle={index} onClick={(e) => toggleDropdown(e)}>
                                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                                         width="30px" height="30px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100" xmlSpace="preserve">
                                                         <path fill="#FFF" d="M70.9,39.7c3.1,0,9.1-2.5,9.1-10.6c0-8.1-5.8-8.5-7.6-8.5c-3.6,0-7.1,2.6-10.2,7.9C59.1,34,55.6,40,55.6,40
@@ -195,7 +195,7 @@ export default function Analysis() {
                                                 <ul id={`dropdown-example-${index}`} className="py-2 space-y-2 can-toggle">
 
                                                     <li>
-                                                        <a href="#" className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 text-white hover:bg-gray-700">Tip: {value.type}</a>
+                                                        <a href="#" className="flex items-center p-2 pl-11 w-full text-base font-normal  rounded-lg transition duration-75 group hover:bg-gray-100 text-white hover:bg-gray-700">Tip: {value.type}</a>
                                                     </li>
                                                 </ul>
                                             </li>
