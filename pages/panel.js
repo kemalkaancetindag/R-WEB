@@ -62,18 +62,18 @@ export default function Panel() {
 
     return (
         <>
-            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-800">
+            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  bg-gray-800">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <img src='/monitoring.png' className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Panel</span>
+                    <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Panel</span>
 
                     <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             <li>
-                                <a href="newAnalysis" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Yeni Analiz</a>
+                                <a href="newAnalysis" className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent  md:p-0 text-white" aria-current="page">Yeni Analiz</a>
                             </li>
                             <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={logout}>Çıkış</a>
+                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-gray-400 hover:text-white hover:bg-gray-700 hover:text-white hover:bg-transparent border-gray-700" onClick={logout}>Çıkış</a>
                             </li>
 
                         </ul>
@@ -89,8 +89,8 @@ export default function Panel() {
 
                 {allAnalysis && allAnalysis.length > 0 ? (
                     <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
-                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <table className="w-full text-sm text-left text-gray-500 text-gray-400">
+                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400">
                                 <tr>
                                     <th scope="col" className="px-6 py-3">
                                         Analiz Kodu
@@ -116,8 +116,8 @@ export default function Panel() {
                             <tbody>
                                 {allAnalysis.slice((currentPage * itemsPerPage), ((currentPage * itemsPerPage) + itemsPerPage)).map((value, index) => (
 
-                                    <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                    <tr key={index} className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 text-white whitespace-nowrap">
                                             {value.analysis_code}
                                         </th>
                                         <td className="px-6 py-4">
@@ -136,7 +136,7 @@ export default function Panel() {
                                         </td>
 
                                         <td className="px-6 py-4 text-right">
-                                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => deleteAnalysis(value._id)}>Sil</a>
+                                            <a href="#" className="font-medium text-blue-600 text-blue-500 hover:underline" onClick={() => deleteAnalysis(value._id)}>Sil</a>
                                         </td>
                                     </tr>
 

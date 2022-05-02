@@ -157,6 +157,11 @@ export default function Analysis() {
         }
     }
 
+    const clearAnalysis = (e) => {
+        localStorage.removeItem("token")
+        router.reload()
+    }
+
 
 
     return (
@@ -165,16 +170,16 @@ export default function Analysis() {
                 analysis && analysis.is_model_ready ? (
                     <div className="grid grid-rows-12 grid-cols-12" >
                         <aside className="col-span-2 row-span fixed" aria-label="Sidebar">
-                            <div className="overflow-y-auto py-4 px-3 bg-gray-50  dark:bg-gray-800" style={{ height: "100vh" }}>
+                            <div className="overflow-y-auto py-4 px-3 bg-gray-50  bg-gray-800" style={{ height: "100vh" }}>
                                 <div className="flex items-center pl-2.5 mb-5">
-                                    <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Değişkenler</span>
+                                    <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Değişkenler</span>
                                 </div>
                                 {analysis && analysis.independent_variables.map((value, index) => {
                                     return (
                                         <ul className="space-y-2" key={index}>
 
                                             <li>
-                                                <button type="button" className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle={index} onClick={(e) => toggleDropdown(e)}>
+                                                <button type="button" className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 text-white hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle={index} onClick={(e) => toggleDropdown(e)}>
                                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                                         width="30px" height="30px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100" xmlSpace="preserve">
                                                         <path fill="#FFF" d="M70.9,39.7c3.1,0,9.1-2.5,9.1-10.6c0-8.1-5.8-8.5-7.6-8.5c-3.6,0-7.1,2.6-10.2,7.9C59.1,34,55.6,40,55.6,40
@@ -190,7 +195,7 @@ export default function Analysis() {
                                                 <ul id={`dropdown-example-${index}`} className="py-2 space-y-2 can-toggle">
 
                                                     <li>
-                                                        <a href="#" className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Tip: {value.type}</a>
+                                                        <a href="#" className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 text-white hover:bg-gray-700">Tip: {value.type}</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -205,8 +210,12 @@ export default function Analysis() {
                         </aside>
 
                         <div className=" col-start-4 col-span-8 row-start-1 mt-10 ">
-                            <div className="flex justify-start mb-10">
+                            <div className="flex justify-between  mb-10">
                                 <h2 className="font-bold text-2xl">Analiz</h2>
+                                <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={(e) => clearAnalysis(e)}>
+                                        Çıkış
+                                </button>
+                                
                             </div>
                             <div className="flex justify-start mb-10">
                                 <div>
@@ -311,8 +320,8 @@ export default function Analysis() {
                                         
 
                                         <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
-                                            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <table className="w-full text-sm text-left text-gray-500 text-gray-400">
+                                                <thead className="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400">
                                                     <tr>
                                                         
                                                         {multiplePrediction.analysis.independent_variables.slice(0, 4).map((variable,key) => (
@@ -329,9 +338,9 @@ export default function Analysis() {
                                                 <tbody>
                                                     {multiplePrediction.predictions.slice((currentPage*10),((currentPage*10)+10)).map((prediction_made, index) => (
 
-                                                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>                                                                                                                        
+                                                        <tr className="bg-white border-b bg-gray-800 border-gray-700 hover:bg-gray-50 hover:bg-gray-600" key={index}>                                                                                                                        
                                                             
-                                                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 text-white whitespace-nowrap">
                                                                 {prediction_made[multiplePrediction.analysis.independent_variables[0].name]}
                                                             </th>
                                                             <td className="px-6 py-4">
@@ -347,7 +356,7 @@ export default function Analysis() {
                                                                 <button type="button" data-modal-toggle="defaultModal" onClick={(e) =>{ 
                                                                     setPredictionIndex(e.currentTarget.getAttribute("prediction-index"))
                                                                     handleModal(e)
-                                                                    }} className="font-medium text-blue-600 dark:text-blue-500 hover:underline" prediction-index={index}>Analizi Göster</button>
+                                                                    }} className="font-medium text-blue-600 text-blue-500 hover:underline" prediction-index={index}>Analizi Göster</button>
                                                             </td>
                                                         </tr>
                                                     ))}
@@ -490,9 +499,10 @@ export default function Analysis() {
                 ) : (
                     <div className="grid grid-rows-12 grid-cols-12" >
                         <aside className="col-span-2 row-span" aria-label="Sidebar" >
+                            
                             <div className="overflow-y-auto py-4 px-3 bg-gray-50 " style={{ height: "100vh" }}>
                                 <div className="flex items-center pl-2.5 mb-5">
-                                    <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Değişkenler</span>
+                                    <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Değişkenler</span>
                                 </div>
 
                             </div>
